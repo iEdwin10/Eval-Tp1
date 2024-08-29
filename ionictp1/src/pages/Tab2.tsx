@@ -9,9 +9,11 @@ import {
   IonItem,
   IonLabel,
   IonAvatar,
+  IonButton,
   IonImg
 } from '@ionic/react';
 import './Tab2.css';
+import DetailButton from '../components/DetailButton';
 
 // Définition du type Pokémon
 type Pokemon = {
@@ -105,9 +107,10 @@ const Tab2: React.FC = () => {
                   Types: {pokemon.types && pokemon.types.length > 0 // J'ai du faire appel a ChatGtP car j'avais du mal a afficher le types des pokemon comme le nom et la catégoie au final c'est parce que la'info se trouvait dans un tableau composé, Le Unknow a été utilisé pour set une donnée vide pour le cas de MissingNo.
                     ? pokemon.types.map((type) => type.name).join(', ')
                     : 'Unknown'}  
-                </p>              
+                </p>            
               </IonLabel>
-            </IonItem>
+              <DetailButton pokemon={pokemon}/>
+            </IonItem> // Utilisation au dessus du component DetailButtton 
           ))}
         </IonList>
       </IonContent>
