@@ -12,7 +12,8 @@ const Tab1: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className="ion-padding">
+    
+      <IonContent>
         <NavigationButton path="/tab2" text="Pokédex" />
         <NavigationButton path="/tab3" text="Film" />
       </IonContent>
