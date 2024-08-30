@@ -3,7 +3,11 @@ import { IonButton } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 
 type DetailButtonProps = {
-  pokemon: any;
+  pokemon: {
+    name: {
+      en: string;
+    };
+  };
 };
 
 const DetailButton: React.FC<DetailButtonProps> = ({ pokemon }) => {
@@ -11,7 +15,7 @@ const DetailButton: React.FC<DetailButtonProps> = ({ pokemon }) => {
 
   const handleDetailClick = () => {
     history.push({
-      pathname: `/pokemon-detail/${pokemon.pokedex_id}`,
+      pathname: `/pokemon/${pokemon.name.en}`,
       state: { pokemon },
     });
   };

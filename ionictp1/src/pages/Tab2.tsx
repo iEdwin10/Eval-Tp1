@@ -95,14 +95,15 @@ const Tab2: React.FC = () => {
       <IonContent>
         <IonList>
           {pokemons.map(pokemon => (
-            <IonItem key={pokemon.pokedex_id}>
+            <IonItem key={pokemon.name.en}>
               <IonAvatar slot="start">
                 <IonImg src={pokemon.sprites.regular} />
               </IonAvatar>
               <IonLabel>
-                <h2>{pokemon.name.en}</h2>
+                <h2>{pokemon.name.fr}</h2>
                 <p>{pokemon.category}</p>
-                <p>Height: {pokemon.height}</p>
+                <p>Taille: {pokemon.height}</p>
+                <p>Poids : {pokemon.weight}</p>
                 <p>
                   Types: {pokemon.types && pokemon.types.length > 0 // J'ai du faire appel a ChatGtP car j'avais du mal a afficher le types des pokemon comme le nom et la catégoie au final c'est parce que la'info se trouvait dans un tableau composé, Le Unknow a été utilisé pour set une donnée vide pour le cas de MissingNo.
                     ? pokemon.types.map((type) => type.name).join(', ')
